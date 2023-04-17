@@ -9,4 +9,10 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
   const rentValue = parseFloat(rentField.value);
   const clothesField = document.getElementById("inputClothes");
   const clothesValue = parseFloat(clothesField.value);
+
+  const totalExpenses = foodValue + rentValue + clothesValue;
+
+  // display total expense in the total expense field
+  const totalExpenseField = document.getElementById("display-total-expenses");
+  totalExpenseField.innerText = totalExpenses;
 });
