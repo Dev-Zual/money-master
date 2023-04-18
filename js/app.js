@@ -4,6 +4,11 @@ function getInputValue(id) {
   return inputValue;
 }
 
+function setTextFieldValueId(id, value) {
+  const textField = document.getElementById(id);
+  textField.innerText = value;
+}
+
 document.getElementById("calculate-btn").addEventListener("click", function () {
   const incomeValue = getInputValue("inputIncome");
 
@@ -15,13 +20,11 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
   const totalExpenses = foodValue + rentValue + clothesValue;
 
   // display total expense in the total expense field
-  const totalExpenseField = document.getElementById("display-total-expenses");
-  totalExpenseField.innerText = totalExpenses;
+  setTextFieldValueId("display-total-expenses", totalExpenses);
 
   // get remaining balance after expense and set balance
   const remainingBalance = incomeValue - totalExpenses;
-  const balanceText = document.getElementById("display-balance");
-  balanceText.innerText = remainingBalance;
+  setTextFieldValueId("display-balance", remainingBalance);
 });
 
 document.getElementById("saving-btn").addEventListener("click", function () {
@@ -31,13 +34,12 @@ document.getElementById("saving-btn").addEventListener("click", function () {
   const savingAmount = (savingValue / 100) * incomeValue;
 
   // set saving amount
-  const savingAmountText = document.getElementById("display-saving-amount");
-  savingAmountText.innerText = savingAmount;
+  setTextFieldValueId("display-saving-amount", savingAmount);
 
   //get final balance
   const balanceText = document.getElementById("display-balance");
   const balanceValue = parseFloat(balanceText.innerText);
   const finalBalance = balanceValue - savingAmount;
-  const displayFinalBalance = document.getElementById("remaining-balance");
-  displayFinalBalance.innerText = finalBalance;
+  //set final balance
+  setTextFieldValueId("remaining-balance", finalBalance);
 });
