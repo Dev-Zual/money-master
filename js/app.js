@@ -15,4 +15,9 @@ document.getElementById("calculate-btn").addEventListener("click", function () {
   // display total expense in the total expense field
   const totalExpenseField = document.getElementById("display-total-expenses");
   totalExpenseField.innerText = totalExpenses;
+
+  // get remaining balance after expense and set balance
+  const remainingBalance = incomeValue - totalExpenses;
+  const balanceText = document.getElementById("display-balance");
+  balanceText.innerText = remainingBalance;
 });
