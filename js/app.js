@@ -34,4 +34,11 @@ document.getElementById("saving-btn").addEventListener("click", function () {
   // set saving amount
   const savingAmountText = document.getElementById("display-saving-amount");
   savingAmountText.innerText = savingAmount;
+
+  //get final balance
+  const balanceText = document.getElementById("display-balance");
+  const balanceValue = parseFloat(balanceText.innerText);
+  const finalBalance = balanceValue - savingAmount;
+  const displayFinalBalance = document.getElementById("remaining-balance");
+  displayFinalBalance.innerText = finalBalance;
 });
